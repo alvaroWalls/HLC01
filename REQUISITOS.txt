@@ -1,0 +1,7 @@
+# HLC01
+#Descargar GitHub desktop
+#En github desktop creas una carpeta github donde se actualizaran los archivos al hacer commit
+#Para ver si hay actualizaciones en github desktop darle a FETCH.
+
+#Curso de openWebinars (HTML5,css3)
+#Tema de la pagina (curso docker).
