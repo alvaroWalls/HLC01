@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lan="es">
+<head>
+	
+	<meta name="keywords" content="docker, docker-compose, contenedores"/>
+	<meta name="description" content="Aprendizaje basico docker-compose"/>
+	<meta charset="utf-8"/>
+	<title>Docker-compose</title>
+	<link rel="stylesheet" href="estilos.css"/>
+	
+</head>
+<body>
+    <header>
+	    <h1>DOCKER Y DOCKER-COMPOSE</h1>
+	
+	    <h4>Álvaro Walls<br/> 
+	    Jorge Herrera<br/>
+	    Javier Mora</h4>
+	
+    </header>
+    
+    <!--<small> se usa para información reservada, textos legales-->
+    <!--<cite>, cursiva,  pero la función es diferente a em, sirve para el titulo de algo importante-->
+    <!--<time>indica al navegador que representa fechas y horas, pubdate indica que se trata de un atributo fecha hora-->
+	    <!--ejempl:<time datetime="2010-09-23" pubdate>algo publicado en 23/09/2010 </time>-->
+    <!--</figure>imagenes, videos, audios etc...; <figcaption> pie de una foto-->
+   
+    <nav>
+	
+	    <table>
+		    <tr>
+			    <th><a href="Index.html">Introducción docker</a></th>
+			    <th>Imagenes y contenedores</th>
+			    <th><a href="docker-compose.html">Docker-compose</a></th>
+		    </tr>
+		
+	    </table>
+    
+	
+	
+    </nav>
+
+    <aside>
+		    
+    </aside>
+
+    <section>
+
+        <article>
+                <header>
+                    <h2>¿Qué es un imagen DOCKER?</h2>
+                <header>
+                    <p>Una imagen es una plantilla, la cual será la base para crear los contenedores. 
+                       Las imágenes pueden estar en local o en el repositorio de docker(<a href="https://hub.docker.com/"/>). Si se quiere
+                       crear una imagen personalizada es necesario crear un Dockerfile.
+                       Por ejemplo una imagen podría contener un sistema operativo Ubuntu con un servidor Apache y tu aplicación web instalada. 
+                    </p>
+			    
+        </article>
+	    <article>
+            <header>
+                <h2>¿Qué es un contenedor DOCKER?</h2>
+            <header>
+                <p>Un contenedor es una instancia de una imagen, la cual tiene que estar creada con anterioridad.
+                    Así mismo un contenedor es muy parecido a una máquina virtual,
+                    pero con la peculiaridad de que comparte el mismo kernel que el host en el que
+                    se encuentra (esto reduce los recursos utilizados, ya que emular el sistema operativo
+                    es lo que consume más recursos). Gracias a lo mencionado con anterioridad, 
+                    los contenedores ofrecen un mayor rendimiento que las máquinas virtuales en ciertos entornos,
+                    por ejemplo, si tienes un entorno con 10 servicios montados en Linux, es más rentable tener
+                    un único host Linux con 10 contenedores y cada uno con el servicio correspondiente, que 10
+                    máquinas virtuales Linux y en cada máquina virtual el servicio que le corresponda.
+                    Eso si tienes un host tipo Linux, solo puedes crear contenedores Linux, ya sea Debian,
+                    RedHat, Ubuntu, Suse, etc. Eso sí, si tienes un host de tipo Linux, no puedes crear contenedores Windows. 
+                </p>
+	    </article>
+	
+	    
+	    
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
