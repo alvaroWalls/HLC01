@@ -6,3 +6,7 @@
 #Curso de openWebinars (HTML5,css3)
 #Tema de la pagina (curso docker).
 #https://liveweave.com/
+#CURSO COMPLETO DE MAQUETACION: 
+
+https://openclassrooms.com/en/courses/3339201-aprende-a-crear-tu-propio-sitio-web-con-html5-y-css3/3349087-ejercicio-practico-creacion-de-una-pagina-web-paso-por-paso
+
