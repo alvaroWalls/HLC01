@@ -6,9 +6,75 @@
 	<meta name="description" content="Aprendizaje basico docker-compose"/>
 	<meta charset="utf-8"/>
 	<title>Docker-compose</title>
-	<link rel="stylesheet" href="estilos.css"/>
+	<link rel="stylesheet" href="Css/estilos.css"/>
 	
 </head>
+
+<script>
+    function colorRect(xPrin, yPrin, xfin, yfin)
+    {
+         
+        var gradiente=lienzo.createLinearGradient(xPrin, yPrin,xfin, yfin);
+        gradiente.addColorStop(0, '#27ae60');  
+        gradiente.addColorStop(1, '#145a32'); 
+        lienzo.fillStyle=gradiente;
+    }
+
+    function propiedadesTextoRect(mensaje, x, y)
+    {
+        lienzo.font="bold 10px verdana, sans-serif"; 
+        lienzo.textAlign="Center"; 
+        lienzo.textBaseline="Center"; 
+        lienzo.fillStyle="black";
+        lienzo.fillText( mensaje, x, y);
+       
+    }
+
+    function dibujo()
+    {  
+        var elemento=document.getElementById('lienzo'); 
+        lienzo=elemento.getContext('2d'); 
+        
+        crearCajas();
+        crearLineas();
+        
+    } 
+
+    function crearCajas()
+    {
+        colorRect(100,225, 220, 300);
+        lienzo.fillRect(100, 225, 120, 75); 
+        propiedadesTextoRect("#Contenedor mysql", 102, 260);
+        lienzo.strokeRect(100, 225, 120, 75);
+        
+        colorRect(300,225, 420, 300);
+        lienzo.fillRect(300, 225, 120, 75);
+        propiedadesTextoRect("#Contenedor mysql", 302, 260);
+        lienzo.strokeRect(300, 225, 120, 75);
+        
+        colorRect(200,50, 320, 125);
+        lienzo.fillRect(200, 50, 120, 75);     
+        propiedadesTextoRect("*IMAGEN MYSQL",210,85 );
+        lienzo.strokeRect(200, 50, 120, 75);
+
+
+
+    }
+
+    function crearLineas()
+    {
+        lienzo.lineWidth=3; 
+        lienzo.moveTo(260, 125);
+        lienzo.lineTo(160, 225);
+        lienzo.moveTo(260, 125);
+        lienzo.lineTo(360, 225);
+        lienzo.stroke();
+    }
+
+    
+    window.addEventListener("load", dibujo, false); 
+</script>
+
 <body>
     <header>
 	    <h1>DOCKER Y DOCKER-COMPOSE</h1>
@@ -51,9 +117,11 @@
                     <h2>¿Qué es un imagen DOCKER?</h2>
                 <header>
                     <p>Una imagen es una plantilla, la cual será la base para crear los contenedores. 
-                       Las imágenes pueden estar en local o en el repositorio de docker(<a href="https://hub.docker.com/"/>). Si se quiere
+                       Las imágenes pueden estar en local o en el repositorio de docker
+                       (<a href="https://hub.docker.com/">Imagenes Docker</a>). Si se quiere
                        crear una imagen personalizada es necesario crear un Dockerfile.
-                       Por ejemplo una imagen podría contener un sistema operativo Ubuntu con un servidor Apache y tu aplicación web instalada. 
+                       Por ejemplo una imagen podría contener un sistema operativo Ubuntu con un servidor Apache y tu 
+                       aplicación web instalada. 
                     </p>
 			    
         </article>
@@ -70,11 +138,14 @@
                     por ejemplo, si tienes un entorno con 10 servicios montados en Linux, es más rentable tener
                     un único host Linux con 10 contenedores y cada uno con el servicio correspondiente, que 10
                     máquinas virtuales Linux y en cada máquina virtual el servicio que le corresponda.
-                    Eso si tienes un host tipo Linux, solo puedes crear contenedores Linux, ya sea Debian,
-                    RedHat, Ubuntu, Suse, etc. Eso sí, si tienes un host de tipo Linux, no puedes crear contenedores Windows. 
+                    Eso sí, si tienes un host tipo Linux, solo puedes crear contenedores Linux, ya sea Debian,
+                    RedHat, Ubuntu, Suse, etc. Por lo tanto, si tienes un host de tipo Linux, no puedes crear contenedores Windows. 
                 </p>
+                <p>El concepto de contenedor es como si restauráramos una máquina virtual a partir de un snapshot.</p>
 	    </article>
-	
+        <canvas id="lienzo" width="500" height="300">
+            Su navegador no soporta este dibujo
+        </canvas>
 	    
 	    
     </section>
