@@ -123,7 +123,18 @@
                        Por ejemplo una imagen podría contener un sistema operativo Ubuntu con un servidor Apache y tu 
                        aplicación web instalada. 
                     </p>
-			    
+                    
+                    <h3>Lista de comandos de imágenes</h3>
+                    
+                    <ul>
+                        <li><strong>Mostrar imágenes:</strong><p><mark>docker images</mark></p></li>
+                        <li><strong>Crear imágen:</strong> <p><mark>docker images build &lt;Ruta del directorio contiene el Dockerfile &gt;</mark>[--tag &lt;nombre para la imagen&gt;]</p></li>
+                        <li><strong>Eliminar imágen:</strong><p> <mark>docker image rm &lt;Nombre de la imagen&gt;</mark> </p> </li>
+                        <li><strong>Exportar imágen:</strong> <p><mark>docker save --output &lt;Nombre del fichero.tar&gt;</mark> </p><Nombre de la imagen> </li>
+                        <li><strong>Importar imágen:</strong> <p><mark>docker import &lt;Ruta del fichero.tar&gt;</mark></p> </li>
+
+
+                    </ul>
         </article>
 	    <article>
             <header>
@@ -142,7 +153,26 @@
                     RedHat, Ubuntu, Suse, etc. Por lo tanto, si tienes un host de tipo Linux, no puedes crear contenedores Windows. 
                 </p>
                 <p>El concepto de contenedor es como si restauráramos una máquina virtual a partir de un snapshot.</p>
-	    </article>
+        
+                <h3>Lista de comandos de imágenes</h3>
+                    
+                    <ul>
+                        <li><strong>Mostrar contenedores:</strong><p><mark>docker ps -a</mark></p></li>
+                        <li><strong>Eliminar contenedor:</strong> <p><mark>docker rm &lt;Nombre del contenedor&gt; </mark>[--force]</p></li>
+                        <li><strong>Crear contenedor:</strong><p> 
+                        <mark>docker run </mark>[-h <Hostname del contenedor>] [--name <Nombre del contenedor>] [-d] <mark>p &lt;IP a la que esta enlazada&gt;:&lt;Puerto del host&gt;:&lt;Puerto del contenedor&gt;</mark> [-v &lt;Ruta del host&gt;:&lt;Ruta del contenedor&gt;[:&lt;Solo lectura (ro)&gt;]]<mark> -it &lt;Nombre de la imagen&gt; &lt;Comando que se ejecutara de fondo&gt; </mark> </p> </li>
+                        <li><strong>Visualizar logs de un contenedor:</strong> <p><mark>docker logs &lt;Nombre del contenedor&gt; </mark>  </li>
+                        <li><strong>Copiar fichero de en el contenedor:</strong>
+                             <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> </p>
+                             <p><mark> docker cp &lt;Ruta del host&gt; &lt;Nombre contenedor&gt;:&lt;Ruta dentro del contenedor&gt; </mark></p>
+                        </li>
+                        <li><strong>Mostrar contenedores activos:</strong><p><mark>docker ps </mark></p></li>
+                        <li><strong>Iniciar contenedor:</strong><p><mark>docker start &lt;Nombre del contenedor&gt;</Nombre></mark></p></li>
+                        <li><strong>Ejecutar comando en un contenedor:</strong><p><mark>docker exec -it &lt;Nombre del contenedor&gt; <Comando a ejecutar> </mark></p></li>
+                        <li><strong>Detener contenedor:</strong><p><mark> docker stop &lt;Nombre del contenedor&gt; </mark></p></li>
+                    </ul>
+        </article>
+        
         <canvas id="lienzo" width="500" height="300">
             Su navegador no soporta este dibujo
         </canvas>
