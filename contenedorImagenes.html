@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="es">
+<html lang="es">
 <head>
 	
 	<meta name="keywords" content="docker, docker-compose, contenedores"/>
@@ -7,81 +7,82 @@
 	<meta charset="utf-8"/>
 	<title>Docker-compose</title>
 	<link rel="stylesheet" href="Css/estilos.css"/>
-	
+    
+    <script>
+            function colorRect(xPrin, yPrin, xfin, yfin)
+            {
+                 
+                var gradiente=lienzo.createLinearGradient(xPrin, yPrin,xfin, yfin);
+                gradiente.addColorStop(0, '#27ae60');  
+                gradiente.addColorStop(1, '#145a32'); 
+                lienzo.fillStyle=gradiente;
+            }
+        
+            function propiedadesTextoRect(mensaje, x, y)
+            {
+                lienzo.font="bold 10px verdana, sans-serif"; 
+                lienzo.textAlign="Center"; 
+                lienzo.textBaseline="Center"; 
+                lienzo.fillStyle="black";
+                lienzo.fillText( mensaje, x, y);
+               
+            }
+        
+            function dibujo()
+            {  
+                var elemento=document.getElementById('lienzo'); 
+                lienzo=elemento.getContext('2d'); 
+                
+                crearCajas();
+                crearLineas();
+                
+            } 
+        
+            function crearCajas()
+            {
+                colorRect(100,225, 220, 300);
+                lienzo.fillRect(100, 225, 120, 75); 
+                propiedadesTextoRect("#Contenedor mysql", 102, 260);
+                lienzo.strokeRect(100, 225, 120, 75);
+                
+                colorRect(300,225, 420, 300);
+                lienzo.fillRect(300, 225, 120, 75);
+                propiedadesTextoRect("#Contenedor mysql", 302, 260);
+                lienzo.strokeRect(300, 225, 120, 75);
+                
+                colorRect(200,50, 320, 125);
+                lienzo.fillRect(200, 50, 120, 75);     
+                propiedadesTextoRect("*IMAGEN MYSQL",210,85 );
+                lienzo.strokeRect(200, 50, 120, 75);
+        
+        
+        
+            }
+        
+            function crearLineas()
+            {
+                lienzo.lineWidth=3; 
+                lienzo.moveTo(260, 125);
+                lienzo.lineTo(160, 225);
+                lienzo.moveTo(260, 125);
+                lienzo.lineTo(360, 225);
+                lienzo.stroke();
+            }
+        
+            
+            window.addEventListener("load", dibujo, false); 
+        </script>
+
 </head>
 
-<script>
-    function colorRect(xPrin, yPrin, xfin, yfin)
-    {
-         
-        var gradiente=lienzo.createLinearGradient(xPrin, yPrin,xfin, yfin);
-        gradiente.addColorStop(0, '#27ae60');  
-        gradiente.addColorStop(1, '#145a32'); 
-        lienzo.fillStyle=gradiente;
-    }
-
-    function propiedadesTextoRect(mensaje, x, y)
-    {
-        lienzo.font="bold 10px verdana, sans-serif"; 
-        lienzo.textAlign="Center"; 
-        lienzo.textBaseline="Center"; 
-        lienzo.fillStyle="black";
-        lienzo.fillText( mensaje, x, y);
-       
-    }
-
-    function dibujo()
-    {  
-        var elemento=document.getElementById('lienzo'); 
-        lienzo=elemento.getContext('2d'); 
-        
-        crearCajas();
-        crearLineas();
-        
-    } 
-
-    function crearCajas()
-    {
-        colorRect(100,225, 220, 300);
-        lienzo.fillRect(100, 225, 120, 75); 
-        propiedadesTextoRect("#Contenedor mysql", 102, 260);
-        lienzo.strokeRect(100, 225, 120, 75);
-        
-        colorRect(300,225, 420, 300);
-        lienzo.fillRect(300, 225, 120, 75);
-        propiedadesTextoRect("#Contenedor mysql", 302, 260);
-        lienzo.strokeRect(300, 225, 120, 75);
-        
-        colorRect(200,50, 320, 125);
-        lienzo.fillRect(200, 50, 120, 75);     
-        propiedadesTextoRect("*IMAGEN MYSQL",210,85 );
-        lienzo.strokeRect(200, 50, 120, 75);
-
-
-
-    }
-
-    function crearLineas()
-    {
-        lienzo.lineWidth=3; 
-        lienzo.moveTo(260, 125);
-        lienzo.lineTo(160, 225);
-        lienzo.moveTo(260, 125);
-        lienzo.lineTo(360, 225);
-        lienzo.stroke();
-    }
-
-    
-    window.addEventListener("load", dibujo, false); 
-</script>
 
 <body>
     <header>
 	    <h1>DOCKER Y DOCKER-COMPOSE</h1>
 	
-	    <h4>Álvaro Walls<br/> 
-	    Jorge Herrera<br/>
-	    Javier Mora</h4>
+	    <p>Álvaro Walls </p>
+	    <p>Jorge Herrera</p>
+        <p>Javier Mora</p>
 	
     </header>
     
@@ -115,7 +116,7 @@
         <article>
                 <header>
                     <h2>¿Qué es un imagen DOCKER?</h2>
-                <header>
+                </header>
                     <p>Una imagen es una plantilla, la cual será la base para crear los contenedores. 
                        Las imágenes pueden estar en local o en el repositorio de docker
                        (<a href="https://hub.docker.com/">Imagenes Docker</a>). Si se quiere
@@ -130,7 +131,7 @@
                         <li><strong>Mostrar imágenes:</strong><p><mark>docker images</mark></p></li>
                         <li><strong>Crear imágen:</strong> <p><mark>docker images build &lt;Ruta del directorio contiene el Dockerfile &gt;</mark>[--tag &lt;nombre para la imagen&gt;]</p></li>
                         <li><strong>Eliminar imágen:</strong><p> <mark>docker image rm &lt;Nombre de la imagen&gt;</mark> </p> </li>
-                        <li><strong>Exportar imágen:</strong> <p><mark>docker save --output &lt;Nombre del fichero.tar&gt;</mark> </p><Nombre de la imagen> </li>
+                        <li><strong>Exportar imágen:</strong> <p><mark>docker save --output &lt;Nombre del fichero.tar&gt;</mark> </p></li>
                         <li><strong>Importar imágen:</strong> <p><mark>docker import &lt;Ruta del fichero.tar&gt;</mark></p> </li>
 
 
@@ -139,7 +140,7 @@
 	    <article>
             <header>
                 <h2>¿Qué es un contenedor DOCKER?</h2>
-            <header>
+            </header>
                 <p>Un contenedor es una instancia de una imagen, la cual tiene que estar creada con anterioridad.
                     Así mismo un contenedor es muy parecido a una máquina virtual,
                     pero con la peculiaridad de que comparte el mismo kernel que el host en el que
@@ -160,15 +161,15 @@
                         <li><strong>Mostrar contenedores:</strong><p><mark>docker ps -a</mark></p></li>
                         <li><strong>Eliminar contenedor:</strong> <p><mark>docker rm &lt;Nombre del contenedor&gt; </mark>[--force]</p></li>
                         <li><strong>Crear contenedor:</strong><p> 
-                        <mark>docker run </mark>[-h <Hostname del contenedor>] [--name <Nombre del contenedor>] [-d] <mark>p &lt;IP a la que esta enlazada&gt;:&lt;Puerto del host&gt;:&lt;Puerto del contenedor&gt;</mark> [-v &lt;Ruta del host&gt;:&lt;Ruta del contenedor&gt;[:&lt;Solo lectura (ro)&gt;]]<mark> -it &lt;Nombre de la imagen&gt; &lt;Comando que se ejecutara de fondo&gt; </mark> </p> </li>
+                        <mark>docker run </mark>[-h &lt;Hostname del contenedor&gt;] [--name &lt;Nombre del contenedor&gt;] [-d] <mark>p &lt;IP a la que esta enlazada&gt;:&lt;Puerto del host&gt;:&lt;Puerto del contenedor&gt;</mark> [-v &lt;Ruta del host&gt;:&lt;Ruta del contenedor&gt;[:&lt;Solo lectura (ro)&gt;]]<mark> -it &lt;Nombre de la imagen&gt; &lt;Comando que se ejecutara de fondo&gt; </mark> </p> </li>
                         <li><strong>Visualizar logs de un contenedor:</strong> <p><mark>docker logs &lt;Nombre del contenedor&gt; </mark>  </li>
                         <li><strong>Copiar fichero de en el contenedor:</strong>
                              <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> </p>
                              <p><mark> docker cp &lt;Ruta del host&gt; &lt;Nombre contenedor&gt;:&lt;Ruta dentro del contenedor&gt; </mark></p>
                         </li>
                         <li><strong>Mostrar contenedores activos:</strong><p><mark>docker ps </mark></p></li>
-                        <li><strong>Iniciar contenedor:</strong><p><mark>docker start &lt;Nombre del contenedor&gt;</Nombre></mark></p></li>
-                        <li><strong>Ejecutar comando en un contenedor:</strong><p><mark>docker exec -it &lt;Nombre del contenedor&gt; <Comando a ejecutar> </mark></p></li>
+                        <li><strong>Iniciar contenedor:</strong><p><mark>docker start &lt;Nombre del contenedor&gt;</mark></p></li>
+                        <li><strong>Ejecutar comando en un contenedor:</strong><p><mark>docker exec -it &lt;Nombre del contenedor&gt; &lt;Comando a ejecutar&gt;  </mark></p></li>
                         <li><strong>Detener contenedor:</strong><p><mark> docker stop &lt;Nombre del contenedor&gt; </mark></p></li>
                     </ul>
         </article>
