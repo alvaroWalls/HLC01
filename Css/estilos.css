@@ -1,8 +1,10 @@
-<!--selector de etiqueta, id, clase-->
+/*selector de etiqueta, id, clase
 
 .{
 	width: 90%;
 }
+*/
+
 
 body
 {
@@ -12,7 +14,7 @@ body
 
 #cabecera_web
 {
-<!--no funciona-->
+/*no funciona */
 	background-color: #07F;
 	width: 50%
 }
@@ -24,7 +26,7 @@ section h2, footer h2, nav table a
     text-transform: uppercase;
 }
 
-<!-- Navegación -->
+/* Navegación */
 
 nav
 {
@@ -90,4 +92,9 @@ aside
 aside ul
 {
     list-style-type: none;
+}
+
+#cajaVideo
+{
+    text-align: center;   
 }
