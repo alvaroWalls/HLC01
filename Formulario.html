@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	
+	<meta name="keywords" content="docker, docker-compose, contenedores"/>
+	<meta name="description" content="Aprendizaje basico docker-compose"/>
+	<meta charset="utf-8"/>
+	<title>Docker-compose</title>
+	<link rel="stylesheet" href="Css/estilos.css"/>
+    
+    <script>
+    
+        function comprobar()
+        {
+            var nombre=document.getElementById("nombre");
+            var apellido=document.getElementById("apellido");
+            document.getElementById("form1").addEventListener("click",algunError, false);
+            document.getElementById("form2").addEventListener("click",algunError, false);
+
+            nombre.addEventListener("input", validar, false);
+            apellido.addEventListener("input", validar, false);
+
+            validar();
+        }
+
+        function validar()
+        {
+            if(nombre.value=="" && apellido.value=="")
+            {
+                nombre.setCustomValidity("Introduce nombre o apellido por favor");
+                nombre.style.background="#FFDDDD";
+                apellido.style.background="#FFDDDD";
+
+            }
+            else
+            {
+                nombre.setCustomValidity("");
+                nombre.style.background="#FFFFFF";
+                apellido.style.background="#FFFFFF";
+            }
+        }
+
+        function algunError(e)
+        {
+            detectarError=e.target;
+            detectarError.style.background="#FFFFFF";
+
+        }
+    
+        window.addEventListener("load", comprobar);
+    </script>
+
+</head>
+<body>
+   
+    <header>
+        <h1>DOCKER Y DOCKER-COMPOSE</h1>
+            
+                <p>Álvaro Walls </p>
+                <p>Jorge Herrera</p>
+                <p>Javier Mora</p>
+            
+    </header>
+
+    
+    <!--<small> se usa para información reservada, textos legales-->
+    <!--<cite>, cursiva,  pero la función es diferente a em, sirve para el titulo de algo importante-->
+    <!--<time>indica al navegador que representa fechas y horas, pubdate indica que se trata de un atributo fecha hora-->
+	    <!--ejempl:<time datetime="2010-09-23" pubdate>algo publicado en 23/09/2010 </time>-->
+    <!--</figure>imagenes, videos, audios etc...; <figcaption> pie de una foto-->
+   
+    <nav>
+	
+	    <table>
+		    <tr>
+			    <th>Introducción docker</th>
+			    <th><a href="contenedorImagenes.html">Imagenes y contenedores</a></th>
+			    <th><a href="docker-compose.html">Docker-compose</a></th>
+		    </tr>
+		
+	    </table>
+  
+    </nav>
+
+
+    <section>
+        
+                   <fieldset>
+                        <legend>QUEREMOS SABER SU OPINIÓN</legend>
+                        <form name="usuario" method="get" id="form1">
+                           
+                                Nombre<br/>
+                                <input type="text" name="nombre" id="nombre" maxlength="15" autofocus/><br/>
+                            
+                                Apellidos<br/>
+                                <input type="text" name="apellido" id="apellido" maxlength="30"/><br/>
+
+                                
+                                Le ha gustado la pagina<br/>
+                                <input type="radio" id="gustar" name="gustar" checked="checked"/>SI
+                                <input type="radio" id="gustar1" name="gustar"/>NO<br/><br/>
+                            
+                           
+                        </form>
+                    </fieldset>
+
+                    <fieldset>
+                        
+                     <legend>ENVIANOS ALGUNA PREGUNTA</legend>
+                        <form method="get" id="form2">
+                            
+
+                            Coméntanos <br/>
+                            <textarea rows="12" cols="100"></textarea><br/>
+                            Correo electrónico<br/>
+                            <input type="email"  id="email" name="email" placeholder="example@mail.com" maxlength="50" required/>
+                            <br/>
+                            <br/>
+                            <input type="submit" id="enviar" name="enviar" value="Enviar" />
+
+
+                        </form>
+                    </fieldset>
+
+    </section>
+
+    
+</body>
+
+</html>
