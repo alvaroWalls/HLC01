@@ -1,27 +1,9 @@
+/*
+------------------------------------------------------
+	Colores del docker-compose.yml
+------------------------------------------------------
+*/
 
-nav
-{
-    background-color: gold;
-    border-style: solid;
-    text-align: center;
-    display: table;
-    margin-left: 3%;
-}
-
-
-header
-{
-    text-align: center;
-}
-
-th
-{
-    padding-left: 122px;   
-    text-align: center; 
-}
-
-
-/* Colores del docker-compose.yml */
 .config #uno
 {
     color:red;
