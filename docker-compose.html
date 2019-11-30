@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 	
-	<meta name="keywords" content="docker, docker-compose, contenedores"/>
+	<meta name="keywords" content="docker, docker-compose, contenedores, maquina, virtual, informatica"/>
 	<meta name="description" content="Aprendizaje basico docker-compose"/>
 	<meta charset="utf-8"/>
 	<title>Docker-compose</title>
 	<link rel="stylesheet" href="Css/estilos.css"/>
-	
+	<link rel="stylesheet" href="Css/docker-compose.css"/>
 </head>
 <body>
     <header>
@@ -56,42 +56,120 @@
                 <h2>Herramienta Docker-Compose</h2>
             </header>
 
-        
             <p>
-                
+                <h3>¿Que es docker compose?</h3>
+                Es un addon de docker que permite orquestar una infraestructura de contenedores.
+                 Así mismo también permite enlazar contenedores entre sí, para de esta forma crear balanceo de
+                  carga y dependencias de otros contenedores.
                
+
+
+                <h3>Para instalar el addon docker-compose, tenemos que ejecutar los siguientes comandos:</h3>
+               <ul>
+               
+                    <li>apt-get install curl</li></br>
+                    <li>curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose</li></br>
+                    <li>chmod +x /usr/local/bin/docker-compose</li></br>
+                    Una vez realizado lo anterior, comprobaremos que la versión instalada es la correcta, para hacer esto utilizaremos el siguiente comando:
+                    <li>docker-compose -version</li></br>
+
+                </ul>
+
+
+
+
+
+
             </p>
 
+        </article>
 
+        <article class="config">
+                <header>
+                        <h2>¿Cómo está estructurado un docker-compose?</h2>
+                </header>
+            
+                <p>Un docker-compose esta formateado en YML, el fichero tiene que llamarse “docker-compose.yml” y sigue la siguiente estructura:</p>
+                
+                    
+                <pre id="uno">  version: "x.x"</pre>
+                <pre id="dos">  services:</pre>
+                <pre id="tres">    nombre-contenedor:</pre>
+                <pre id="cuatro">       image: nombre-imagen-base</pre>
+                <pre id="cinco">       env_file:</pre>
+                <pre id="cinco">          - fichero-variables.env</pre>
+                <pre id="seis">       ports:</pre>
+                <pre id="seis">           - "x.x.x.x:puerto-host:puerto-contenedor"</pre>
+                <pre id="siete">       volumes:</pre>
+                <pre id="siete">          - "/ruta/host:/ruta/contenedor"</pre>
+                <pre id="tres">    nombre-contenedor1:</pre>
+                <pre id="ocho">       build: /ruta/directorio/contenedor/dockerfile</pre>
+                <pre id="siete">       volumes:</pre>
+                <pre id="siete">          - "/ruta/host1:/ruta/contenedor1"</pre>
+                <pre id="cinco">       env_file:</pre>
+                <pre id="cinco">          - fichero-variables1.env</pre>
+                <pre id="nueve">       links:</pre>
+                <pre id="nueve">          - nombre-contenedor</pre>
+                <pre>                 . . .             </pre>
+                     
+                <p id="uno">En este apartado se indica la versión del docker-file que se va a utilizar.</p>
+                <p id="dos">En este apartado se indican los nombres de los servicios a utilizar.</p>
+                <p id="tres">En este apartado se indica el nombre del contenedor.</p>
+                <p id="cuatro">En este apartado se indica la imagen base a utilizar.</p>
+                <p id="cinco">En este apartado se indica el fichero que contendrá las variables de entorno del contenedor.</p>
+                <p id="seis">En este apartado se indica los puertos que van a ser expuestos del contenedor.</p>
+                <p id="siete">En este apartado se indica el volumen que se va a utilizar.</p>
+                <p id="ocho">En este apartado se indica el dockerfile a utilizar.</p>
+                <p id="nueve">En este apartado se indica que contenedor tendrá enlazado y será dependiente.</p>
 
+        </article>
+        <article class="config">
+            <header>
+                    <h2>Ejemplo de docker-compose</h2>
+            </header>
+
+            <pre id="uno">  version: "3.0"</pre>
+            <pre id="dos">  services:</pre>
+            <pre id="tres">    mariadb:</pre>
+            <pre id="cuatro">      image: mariadb</pre>
+            <pre id="cinco">      env_file:</pre>
+            <pre id="cinco">         - mariadb.env</pre>
+            <pre id="seis">      ports:</pre>
+            <pre id="seis">          - "192.168.20.245:3306:3306"</pre>
+            <pre id="siete">      volumes:</pre>
+            <pre id="siete">         - "/root/dockercompose/mariadb:/var/lib/mysql"</pre>
+            <pre id="tres">    wordpress:</pre>
+            <pre id="cuatro">      image: wordpress</pre>
+            <pre id="siete">      volumes:</pre>
+            <pre id="siete">         - "/root/dockercompose/wordpress:/var/www/html"</pre>
+            <pre id="cinco">      env_file:</pre>
+            <pre id="cinco">         - wordpress.env</pre>
+            <pre id="nueve">      links:</pre>
+            <pre id="nueve">         - mariadb</pre>
+            <pre id="tres">    nginx:</pre>
+            <pre id="cuatro">      image:nginx</pre>
+            <pre id="siete">      volumes:</pre>
+            <pre id="siete">         - $PWD/default.conf:/etc/nginx/conf.d/default.conf:ro</pre>
+            <pre id="nueve">      links:</pre>
+            <pre id="nueve">         - wordpress</pre>
+            <pre id="seis">      ports:</pre>
+            <pre id="seis">          - "192.168.20.245:80:80"</pre>
         </article>
 
         <!-- Video insertado con JAVASCRIPT-->
         <p id="cajaVideo"> 
-                <button onclick="reproducirParar()">Reproducir/Pausar</button> 
+
+                <video id="video1" width="500" controls>
+                  <source src="docker-compose.mp4" type="video/mp4">
+                  Tu navegador no admite videos.
+                </video>
+
+                <br/>
                 <button onclick="hacerGrande()">Grande</button>
                 <button onclick="hacerPequeño()">Pequeño</button>
                 <button onclick="hacerNormal()">Normal</button>
-                <br><br>
-
-                
-                <video id="video1" width="420">
-                  <source src="mov_bbb.mp4" type="video/mp4">
-                  Tu navegador no admite videos.
-                </video>
-                <br/>
-                <button onclick="bajarVolumen()"> - VOL</button>
-                <button onclick="subirVolumnen()"> + VOL</button>
-              
             <script> 
                     var myVideo = document.getElementById("video1"); 
-                    
-                    function reproducirParar() { 
-                        if (myVideo.paused) 
-                        myVideo.play(); 
-                        else 
-                        myVideo.pause(); 
-                    } 
                     
                     function hacerGrande() { 
                         myVideo.width = 1080; 
@@ -105,16 +183,6 @@
                         myVideo.width = 620; 
                         
                     } 
-
-                    function bajarVolumen()
-                    {
-                        myVideo.volume = myVideo.volume-0.1;
-                    }
-
-                    function subirVolumnen()
-                    {
-                        myVideo.volume = myVideo.volume+0.1;
-                    }
 
             </script> 
         </p> 
