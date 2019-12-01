@@ -14,13 +14,15 @@
         {
             var nombre=document.getElementById("nombre");
             var apellido=document.getElementById("apellido");
-            document.getElementById("form1").addEventListener("click",algunError, false);
-            document.getElementById("form2").addEventListener("click",algunError, false);
 
             nombre.addEventListener("input", validar, false);
             apellido.addEventListener("input", validar, false);
-
             validar();
+            
+           
+            document.form2.addEventListener("invalid", algunError, true);
+            
+            algunError();
         }
 
         function validar()
@@ -28,8 +30,8 @@
             if(nombre.value=="" && apellido.value=="")
             {
                 nombre.setCustomValidity("Introduce nombre o apellido por favor");
-                nombre.style.background="#FFDDDD";
-                apellido.style.background="#FFDDDD";
+                nombre.style.background="#faf3ac";
+                apellido.style.background="#faf3ac";
 
             }
             else
@@ -42,8 +44,9 @@
 
         function algunError(e)
         {
+
             detectarError=e.target;
-            detectarError.style.background="#FFFFFF";
+            detectarError.style.background="#faf3ac";
 
         }
     
@@ -55,10 +58,15 @@
    
     <header>
         <h1>DOCKER Y DOCKER-COMPOSE</h1>
-            
-                <p>Álvaro Walls </p>
-                <p>Jorge Herrera</p>
-                <p>Javier Mora</p>
+        
+        <figure id="fotocabecera">
+			<img src="../imagenes/logo.png" alt="Not found"/>
+			<figcaption></figcaption>
+		</figure>
+
+                <h4>Álvaro Walls<br/> 
+                    Jorge Herrera<br/>
+                    Javier Mora</h4>
             
     </header>
 
@@ -71,21 +79,22 @@
    
     <nav>
 	
-	    <table>
-		    <tr>
-			    <th>Introducción docker</th>
-			    <th><a href="html/contenedorImagenes.html">Imagenes y contenedores</a></th>
-			    <th><a href="html/docker-compose.html">Docker-compose</a></th>
-		    </tr>
-		
-	    </table>
-  
+	    
+			    <table>
+                    <tr>
+                        <th><a href="../Index.html">Introducción docker</a></th>
+                        <th><a href="contenedorImagenes.html">Imagenes y contenedores</a></th>
+                        <th><a href="docker-compose.html">Docker-compose</a></th>
+                        <th>¿Qué te parece?</th>
+                    </tr>  
+                </table>
+		   
     </nav>
 
 
     <section>
         
-                   <fieldset>
+                   <fieldset class="fieldset">
                         <legend>QUEREMOS SABER SU OPINIÓN</legend>
                         <form name="usuario" method="get" id="form1">
                            
@@ -104,14 +113,14 @@
                         </form>
                     </fieldset>
 
-                    <fieldset>
+                    <fieldset >
                         
-                     <legend>ENVIANOS ALGUNA PREGUNTA</legend>
-                        <form method="get" id="form2">
+                     <legend>PREGUNTAS</legend>
+                        <form method="get" name="form2" id="form2">
                             
 
-                            Coméntanos <br/>
-                            <textarea rows="12" cols="100"></textarea><br/>
+                            Pregúntanos <br/>
+                            <textarea rows="12" cols="100" required></textarea><br/>
                             Correo electrónico<br/>
                             <input type="email"  id="email" name="email" placeholder="example@mail.com" maxlength="50" required/>
                             <br/>
