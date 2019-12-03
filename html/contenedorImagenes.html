@@ -139,7 +139,7 @@
                     
                     <ul>
                         <li><strong>Mostrar imágenes:</strong><p><mark>docker images</mark></p></li>
-                        <li><strong>Crear imágen:</strong> <p><mark>docker images build &lt;Ruta del directorio contiene el Dockerfile &gt;</mark>[--tag &lt;nombre para la imagen&gt;]</p></li>
+                        <li><strong>Crear imágen:</strong> <p><mark>docker images build &lt;Ruta del directorio que contiene el Dockerfile &gt;</mark>[--tag &lt;nombre para la imagen&gt;]</p></li>
                         <li><strong>Eliminar imágen:</strong><p> <mark>docker image rm &lt;Nombre de la imagen&gt;</mark> </p> </li>
                         <li><strong>Exportar imágen:</strong> <p><mark>docker save --output &lt;Nombre del fichero.tar&gt;</mark> </p></li>
                         <li><strong>Importar imágen:</strong> <p><mark>docker import &lt;Ruta del fichero.tar&gt;</mark></p> </li>
@@ -174,7 +174,7 @@
                         <mark>docker run </mark>[-h &lt;Hostname del contenedor&gt;] [--name &lt;Nombre del contenedor&gt;] [-d] <mark>p &lt;IP a la que esta enlazada&gt;:&lt;Puerto del host&gt;:&lt;Puerto del contenedor&gt;</mark> [-v &lt;Ruta del host&gt;:&lt;Ruta del contenedor&gt;[:&lt;Solo lectura (ro)&gt;]]<mark> -it &lt;Nombre de la imagen&gt; &lt;Comando que se ejecutara de fondo&gt; </mark> </p> </li>
                         <li><strong>Visualizar logs de un contenedor:</strong> <p><mark>docker logs &lt;Nombre del contenedor&gt; </mark>  </li>
                         <li><strong>Copiar fichero de en el contenedor:</strong>
-                             <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> </p>
+                             <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> <p/>
                              <p><mark> docker cp &lt;Ruta del host&gt; &lt;Nombre contenedor&gt;:&lt;Ruta dentro del contenedor&gt; </mark></p>
                         </li>
                         <li><strong>Mostrar contenedores activos:</strong><p><mark>docker ps </mark></p></li>

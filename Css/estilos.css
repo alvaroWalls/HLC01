@@ -10,7 +10,7 @@ html
 
 body
 {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-family: "Trebuchet MS", Arial, sans-serif;
     color: #181818;
 }
 
@@ -102,11 +102,12 @@ header h4
 
 header h1{
 
-    
+    text-shadow: 2px -2px  goldenrod;
     display: block;
     width: 45%;
     float: right;
     margin-right: 28%;
+    
 
   
 }
@@ -122,7 +123,7 @@ nav
 	background-color: gold;
     border-style: solid;
     text-align: center;
-    display: table;
+    display: inline-block;
     margin-left: 5%;
     width: 90%;
     text-align: right;
@@ -135,7 +136,8 @@ nav li
     margin-right: 15px;
 }
 
-nav a
+/*selector de atributo, enlaces que terminen en html*/
+a[href$=".html"]
 {
     font-size: 1.3em;
     color: #181818;
@@ -146,11 +148,7 @@ nav a
 nav a:hover
 {
     color: #760001;
-    /*
-		Subraya el boton que quieras pulsar...
-		border-bottom: 3px solid #760001;
-	*/
-	background-color: #fff;
+	background-color:gold;
 }
 
 /*
@@ -165,11 +163,12 @@ aside
     position: relative;
 	float: right;
 	
-	vertical-align: top;
-    width: 235px;
+    width: 20%;
 	height: 235px;
 	padding-top: 30px;
-	margin: 10%;
+    margin-right: 5%;
+    margin-top:2% ;
+   
     
     background-color: #706b64;
     box-shadow: 0px 3px 6px #1c1a19;
@@ -185,6 +184,19 @@ aside ul
     list-style-type: none;
 }
 
+#mapholder{
+    
+    float: right;
+}
+
+#botonMapa{
+
+   display: block ;
+   margin-left: 15%;
+   border-style: solid;
+   border-color: goldenrod;
+}
+
 /*
 ------------------------------------------------------
 	Section // Article
@@ -194,20 +206,39 @@ aside ul
 section
 {
 	float: left;
-    width: 625px;
-	
+    width: 60%;
     margin-right: 15px;
     margin-left: 80px;
     padding:2%;
+  
 }
 
 article
 {
 
     background-color: #9D9B9A;
+    border-radius: 10.5px;
     padding:2%;
+    margin-bottom: 3%;
 }
 
+
+/*selector de atributo, enlaces que comienzen con https://hub.docker*/
+a[href^="https://hub.docker"]
+{
+    color:gold;
+    font-size: medium;
+    font-weight: bold;
+
+}
+
+article a:hover
+{
+    color:black;
+    font-size: medium;
+    font-weight: bold;
+
+}
 
 section p
 {
@@ -220,27 +251,44 @@ section p
 
 }
 
+/*Estilo al ultimo hijo de la etiqueta p contenida en li*/
+li p:last-of-type{
 
-/*
-----------------------------------------------------------------------------------------------------------------------------
-Colores:
+    
+    font-family: monospace;
+    font-size: large;
+}
+li p:first-of-type{
 
-Gris:  #9D9B9A
+    
+    font-family: monospace;
+    font-size: large;
+}
 
-*/
 
+/*------------------------------------------------------------------------------------------*/
 /* Estilos formulario*/
-
+/*-------------------------------------------------------------------------------------------*/
 fieldset
 {
 
 margin-top: 10%;
 background-color:darkgrey;
 border-radius: 10.5px;
+width: 105%;
 
 }
 
-fieldset legend
+/*Estilo al primer hijo de la etiqueta fieldset*/
+fieldset :first-child
 {
-    
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+/*para los input cuyo atributo es tipo text*/
+input[type="text"]
+{
+    width: 30%;
 }

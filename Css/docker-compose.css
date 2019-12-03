@@ -31,7 +31,7 @@
 
 .config #seis
 {
-    color:limegreen;
+    color:rgb(25, 92, 25);
 }
 
 .config #siete
@@ -51,6 +51,7 @@
 
 .config pre{
     margin-bottom: -1.3%;
+    font-weight: bold;
 }
 
 .config p{
