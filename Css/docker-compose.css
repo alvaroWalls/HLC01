@@ -4,57 +4,59 @@
 ------------------------------------------------------
 */
 
-.config #uno
+.uno
 {
     color:red;
 }
 
-.config #dos
+.dos
 {
     color:seagreen;
 }
 
-.config #tres
+.tres
 {
     color:royalblue;
 }
 
-.config #cuatro
+.cuatro
 {
     color:saddlebrown;
 }
 
-.config #cinco
+.cinco
 {
     color:orangered;
 }
 
-.config #seis
+.seis
 {
     color:rgb(25, 92, 25);
 }
 
-.config #siete
+.siete
 {
     color:purple;
 }
 
-.config #ocho
+.ocho
 {
     color:slategray;
 }
 
-.config #nueve
+.nueve
 {
     color:navy;
 }
 
-.config pre{
+.pre
+{
     margin-bottom: -1.3%;
     font-weight: bold;
 }
 
-.config p{
+.p
+{
     margin-bottom: -1.3%;
 }
 /* ------------------------------------ */

@@ -6,7 +6,7 @@
 	<meta name="description" content="Aprendizaje basico docker-compose"/>
 	<meta charset="utf-8"/>
 	<title>Docker-compose</title>
-	<link rel="stylesheet" href="../css/estilos.css"/>
+	<link rel="stylesheet" href="../Css/estilos.css"/>
     
     <script>
             function colorRect(xPrin, yPrin, xfin, yfin)
@@ -81,7 +81,7 @@
         <h1>DOCKER Y DOCKER-COMPOSE</h1>
         
         <figure id="fotocabecera">
-			<img src="../imagenes/logo.png"/>
+			<img src="../imagenes/logo.png" alt="Logo Docker"/>
 			<figcaption></figcaption>
 		</figure>
 	
@@ -174,7 +174,7 @@
                         <mark>docker run </mark>[-h &lt;Hostname del contenedor&gt;] [--name &lt;Nombre del contenedor&gt;] [-d] <mark>p &lt;IP a la que esta enlazada&gt;:&lt;Puerto del host&gt;:&lt;Puerto del contenedor&gt;</mark> [-v &lt;Ruta del host&gt;:&lt;Ruta del contenedor&gt;[:&lt;Solo lectura (ro)&gt;]]<mark> -it &lt;Nombre de la imagen&gt; &lt;Comando que se ejecutara de fondo&gt; </mark> </p> </li>
                         <li><strong>Visualizar logs de un contenedor:</strong> <p><mark>docker logs &lt;Nombre del contenedor&gt; </mark>  </li>
                         <li><strong>Copiar fichero de en el contenedor:</strong>
-                             <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> <p/>
+                             <p><mark>docker cp &lt;Nombre contenedor &gt;:&lt;Ruta dentro del contenedor&gt; &lt;Ruta del host&gt;</mark> </p>
                              <p><mark> docker cp &lt;Ruta del host&gt; &lt;Nombre contenedor&gt;:&lt;Ruta dentro del contenedor&gt; </mark></p>
                         </li>
                         <li><strong>Mostrar contenedores activos:</strong><p><mark>docker ps </mark></p></li>
