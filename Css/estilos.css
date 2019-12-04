@@ -14,6 +14,25 @@ body
     color: #181818;
 }
 
+#enlaces_interes a
+{
+	color:gold;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+	margin-left: -10%;
+}
+
+#enlaces_interes li
+{
+	margin-bottom: 5%;
+}
+
+#enlaces_interes a:hover
+{
+	color: #07F;
+}
+
 #cabecera_web
 {
 	background-color: #07F;
@@ -182,6 +201,15 @@ aside
 aside ul
 {
     list-style-type: none;
+}
+
+aside h4
+{
+    text-align: center;
+	margin-left: -20%;
+	color: #181818;
+    padding-bottom: 3px;
+	
 }
 
 #mapholder{
