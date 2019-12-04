@@ -28,6 +28,18 @@ body
 	margin-bottom: 5%;
 }
 
+#titulo
+{
+	
+	font-size: 1.3em;
+    text-align: center;
+	margin-left: -20%;
+	margin-top: -10%;
+	color: #181818;
+    padding-bottom: 10px;
+	
+}
+
 #enlaces_interes a:hover
 {
 	color: #07F;
@@ -186,7 +198,7 @@ aside
 	height: 235px;
 	padding-top: 30px;
     margin-right: 5%;
-    margin-top:2% ;
+    margin-top:2%;
    
     
     background-color: #706b64;
@@ -203,14 +215,7 @@ aside ul
     list-style-type: none;
 }
 
-aside h4
-{
-    text-align: center;
-	margin-left: -20%;
-	color: #181818;
-    padding-bottom: 3px;
-	
-}
+
 
 #mapholder{
     
