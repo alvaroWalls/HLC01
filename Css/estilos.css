@@ -194,6 +194,7 @@ aside
     position: relative;
 	float: right;
 	
+	
     width: 20%;
 	height: 235px;
 	padding-top: 30px;
@@ -232,6 +233,26 @@ aside ul
 
 /*
 ------------------------------------------------------
+	Footer
+------------------------------------------------------
+*/
+
+footer
+{
+	background-color: #707070; 
+	box-shadow: solid 2px;
+	float:left;
+	clear: left;
+	width: 100%;
+	text-align:center;
+	margin-left: -0.7%;
+	padding-right: 1.1%;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+/*
+------------------------------------------------------
 	Section // Article
 ------------------------------------------------------
 */
@@ -239,11 +260,12 @@ aside ul
 section
 {
 	float: left;
+	
     width: 60%;
     margin-right: 15px;
     margin-left: 80px;
     padding:2%;
-  
+	
 }
 
 article
